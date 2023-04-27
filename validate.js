@@ -27,7 +27,15 @@ function validateForm(){
 		  document.getElementById("ticknum").focus();
 		  return false;
 		}else{
-			total = priceCalculate();
+			let num = (document.getElementById("ticknum").value).trim();
+			let selected = (document.getElementById("event").value).trim();
+			let price = 0
+			if(selected == 1) price = 91.25
+			else if(selected == 2) price = 79.88
+			else if(selected == 3) price = 83.12
+			else price = 100
+
+			let total = price * num
 			alert("Total price for this booking is "+total+" USD");
 			return false;
 		}
